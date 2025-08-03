@@ -4,8 +4,8 @@ My submission for the GMTK 2025 Jam. I used this opportunity to learn Godot and 
 
 ## Screenshots
 
-![Screenshot1](https://github.com/ekx/gmtk2025/blob/master/title.png)
-![Screenshot2](https://github.com/ekx/gmtk2025/blob/master/screenshot.png)
+![Screenshot1](title.png?raw=true)
+![Screenshot2](screenshot.png?raw=true)
 
 ## Instructions
 
