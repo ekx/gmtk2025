@@ -1,0 +1,22 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://di54mjf0pswnv"]
+
+[ext_resource type="Shader" uid="uid://ybite1s82on6" path="res://shaders/ntsc_tv.gdshader" id="1_8qdem"]
+
+[resource]
+shader = ExtResource("1_8qdem")
+shader_parameter/enabled = true
+shader_parameter/timer_multiplier = 0.1
+shader_parameter/curved_display = true
+shader_parameter/vignette = true
+shader_parameter/vlines = true
+shader_parameter/flicker = true
+shader_parameter/noise = true
+shader_parameter/tonemap = true
+shader_parameter/glow = true
+shader_parameter/ghosting = true
+shader_parameter/scanlines = true
+shader_parameter/level_adjustment = true
+shader_parameter/wiggle = true
+shader_parameter/bleed = true
+shader_parameter/ntsc = false
+shader_parameter/ntsc_blur_amount = 3.0

@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dpxfbqen1kupg"]
+
+[ext_resource type="Shader" uid="uid://b1qy8hvsl5j3r" path="res://shaders/psx_material.gdshader" id="1_wr07o"]
+[ext_resource type="Texture2D" uid="uid://87r1vrig6mq2" path="res://models/railing.png" id="2_hc18y"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_wr07o")
+shader_parameter/affine_mapping = true
+shader_parameter/albedo = ExtResource("2_hc18y")
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.5
+shader_parameter/resolution = Vector2i(397, 223)

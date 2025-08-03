@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=3 uid="uid://da5pfe175u0ev"]
+
+[ext_resource type="PackedScene" uid="uid://c4nmg87qg3vb7" path="res://scenes/level.tscn" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://b0wod5j0gexvx" path="res://scripts/render_pipeline.gd" id="1_jyhfs"]
+[ext_resource type="Material" uid="uid://di54mjf0pswnv" path="res://materials/ntsc_tv.tres" id="2_sugp2"]
+[ext_resource type="Material" uid="uid://dki74rrg30bxm" path="res://materials/psx_post_processing.tres" id="3_sugp2"]
+[ext_resource type="FontFile" uid="uid://bixvq5e6yqmn6" path="res://fonts/SpecialElite-Regular.ttf" id="5_tbgi4"]
+[ext_resource type="Script" uid="uid://dxbo7sfu0nc8o" path="res://scripts/fade_out.gd" id="5_tefeu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jyhfs"]
+font = ExtResource("5_tbgi4")
+font_size = 18
+
+[node name="Main" type="Node"]
+
+[node name="RenderPipeline" type="Node" parent="." node_paths=PackedStringArray("render_viewport", "post_process_viewport", "post_process_color_rect", "final_color_rect")]
+script = ExtResource("1_jyhfs")
+render_viewport = NodePath("../RenderViewport")
+post_process_viewport = NodePath("../PostProcessViewport")
+post_process_color_rect = NodePath("../PostProcessViewport/PostProcessColorRect")
+final_color_rect = NodePath("../FinalColorRect")
+
+[node name="RenderViewport" type="SubViewport" parent="."]
+handle_input_locally = false
+size = Vector2i(397, 223)
+render_target_update_mode = 4
+
+[node name="Main" parent="RenderViewport" instance=ExtResource("1_0wfyh")]
+
+[node name="PostProcessViewport" type="SubViewport" parent="."]
+handle_input_locally = false
+gui_disable_input = true
+size = Vector2i(397, 223)
+render_target_update_mode = 4
+
+[node name="PostProcessColorRect" type="ColorRect" parent="PostProcessViewport"]
+material = ExtResource("3_sugp2")
+custom_minimum_size = Vector2(397, 223)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="PostProcessViewport/PostProcessColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Headphones recommended"
+label_settings = SubResource("LabelSettings_jyhfs")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_tefeu")
+
+[node name="FinalColorRect" type="ColorRect" parent="."]
+material = ExtResource("2_sugp2")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0058, 1)
+mouse_filter = 2

@@ -1,0 +1,13 @@
+Assets used:
+
+wall: https://itoldya420.getarchive.net/amp/media/concrete-structure-old-backgrounds-textures-083b52
+ceiling: https://pxhere.com/de/photo/568293
+stairs: https://www.deviantart.com/spiralgraphic/art/Checker-Floor-Seamless-Texture-171353706
+railing: selfmade
+door: https://www.pexels.com/photo/metal-double-winged-door-17762946/
+window: https://www.deviantart.com/agf81/art/Window-Texture-3-203828828
+
+footstep sfx: https://pixabay.com/sound-effects/concrete-footsteps-1-6265/
+beat sfx: https://pixabay.com/sound-effects/heavy-walking-footsteps-352771/
+
+font: https://fonts.google.com/specimen/Special+Elite?query=special+elite

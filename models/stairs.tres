@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://c0qvll5e4nrqe"]
+
+[ext_resource type="Shader" uid="uid://b1qy8hvsl5j3r" path="res://shaders/psx_material.gdshader" id="1_h8xof"]
+[ext_resource type="Texture2D" uid="uid://p6aroam12c4" path="res://models/stairs.png" id="2_5a3a1"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_h8xof")
+shader_parameter/affine_mapping = true
+shader_parameter/albedo = ExtResource("2_5a3a1")
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.5
+shader_parameter/resolution = Vector2i(397, 223)

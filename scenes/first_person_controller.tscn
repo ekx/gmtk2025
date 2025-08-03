@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://bs72ogkvdd7d6"]
+
+[ext_resource type="Script" uid="uid://csixc58lvqcyp" path="res://scripts/first_person_controller.gd" id="1_ucva2"]
+[ext_resource type="AudioStream" uid="uid://cmkt8jpqjynuy" path="res://sfx/step1.wav" id="2_a0d5c"]
+[ext_resource type="AudioStream" uid="uid://dfvahd8j6jhir" path="res://sfx/step2.wav" id="3_sryny"]
+[ext_resource type="AudioStream" uid="uid://dy5kanf71epls" path="res://sfx/step3.wav" id="4_0mkth"]
+[ext_resource type="AudioStream" uid="uid://rmnywpljjqjx" path="res://sfx/beat1.wav" id="5_0mkth"]
+[ext_resource type="AudioStream" uid="uid://dgek1omxrmnll" path="res://sfx/beat2.wav" id="6_gn5v5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iof21"]
+albedo_color = Color(0.91806, 0.575202, 0.222449, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ucva2"]
+radius = 0.4
+height = 1.8
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iof21"]
+radius = 0.4
+height = 1.8
+
+[node name="FirstPersonController" type="CharacterBody3D" node_paths=PackedStringArray("footstep_player", "beat_player", "player_light")]
+script = ExtResource("1_ucva2")
+base_speed = 1.5
+footstep_player = NodePath("Feet/FootstepPlayer")
+footsteps = Array[AudioStream]([ExtResource("2_a0d5c"), ExtResource("3_sryny"), ExtResource("4_0mkth")])
+beat_player = NodePath("BeatPlayer")
+beats = Array[AudioStream]([ExtResource("5_0mkth"), ExtResource("6_gn5v5")])
+player_light = NodePath("Head/OmniLight3D")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+material_override = SubResource("StandardMaterial3D_iof21")
+cast_shadow = 0
+mesh = SubResource("CapsuleMesh_ucva2")
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_iof21")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Head"]
+light_energy = 1.5
+distance_fade_begin = 0.0
+distance_fade_length = 3.0
+omni_range = 6.0
+omni_attenuation = 0.0
+
+[node name="Feet" type="Node3D" parent="."]
+
+[node name="FootstepPlayer" type="AudioStreamPlayer" parent="Feet"]
+volume_db = -5.0
+
+[node name="BeatPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -48.0

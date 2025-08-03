@@ -1,0 +1,148 @@
+[gd_scene load_steps=9 format=3 uid="uid://c4nmg87qg3vb7"]
+
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scenes/first_person_controller.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://cwa848paprc6g" path="res://models/stairwell.blend" id="2_w7c3h"]
+[ext_resource type="PackedScene" uid="uid://cdb2g3iam76qt" path="res://models/start.blend" id="2_w8frs"]
+[ext_resource type="PackedScene" uid="uid://h3fr7ep3oj8p" path="res://models/walls_only.blend" id="4_ppgk2"]
+[ext_resource type="PackedScene" uid="uid://nb78o8hfl2bh" path="res://models/end.blend" id="5_2r41h"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sgp6g"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_o5qli"]
+sky_material = SubResource("ProceduralSkyMaterial_sgp6g")
+
+[sub_resource type="Environment" id="Environment_0wfyh"]
+background_mode = 2
+sky = SubResource("Sky_o5qli")
+ambient_light_source = 1
+tonemap_mode = 3
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.0
+fog_aerial_perspective = 0.25
+fog_depth_begin = 2.0
+fog_depth_end = 10.0
+
+[node name="Main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0wfyh")
+
+[node name="FirstPersonController" parent="." instance=ExtResource("1_o5qli")]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -1.5, 0, -3.75)
+can_jump = false
+input_left = "move_left"
+input_right = "move_right"
+input_forward = "move_forward"
+input_back = "move_backward"
+input_jump = "jump"
+input_freefly = "noclip"
+
+[node name="start" parent="." instance=ExtResource("2_w8frs")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="start"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 4.5)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="start"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2.5, 4.5)
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="start"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2.5, 4.5)
+
+[node name="stairwell1" parent="." instance=ExtResource("2_w7c3h")]
+
+[node name="stairwell2" parent="." instance=ExtResource("2_w7c3h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+
+[node name="stairwell3" parent="." instance=ExtResource("2_w7c3h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8, 0)
+
+[node name="stairwell4" parent="." instance=ExtResource("2_w7c3h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -12, 0)
+
+[node name="stairwell5" parent="." instance=ExtResource("2_w7c3h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -16, 0)
+
+[node name="stairwell6" parent="." instance=ExtResource("2_w7c3h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20, 0)
+
+[node name="stairwell7" parent="." instance=ExtResource("2_w7c3h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -24, 0)
+
+[node name="stairwell8" parent="." instance=ExtResource("2_w7c3h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -28, 0)
+
+[node name="stairwell9" parent="." instance=ExtResource("2_w7c3h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -31.8, 0)
+
+[node name="stairwell10" parent="." instance=ExtResource("2_w7c3h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -36, 0)
+
+[node name="stairwell11" parent="." instance=ExtResource("2_w7c3h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -40, 0)
+
+[node name="stairwell12" parent="." instance=ExtResource("2_w7c3h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -44, 0)
+
+[node name="stairwell13" parent="." instance=ExtResource("2_w7c3h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -48, 0)
+
+[node name="stairwell14" parent="." instance=ExtResource("2_w7c3h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -52, 0)
+
+[node name="stairwell15" parent="." instance=ExtResource("2_w7c3h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -56, 0)
+
+[node name="stairwell16" parent="." instance=ExtResource("2_w7c3h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -60, 0)
+
+[node name="stairwell17" parent="." instance=ExtResource("2_w7c3h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -64, 0)
+
+[node name="stairwell18" parent="." instance=ExtResource("2_w7c3h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -68, 0)
+
+[node name="stairwell19" parent="." instance=ExtResource("2_w7c3h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -72, 0)
+
+[node name="stairwell20" parent="." instance=ExtResource("2_w7c3h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -76, 0)
+
+[node name="walls_only1" parent="." instance=ExtResource("4_ppgk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -80, 0)
+
+[node name="walls_only2" parent="." instance=ExtResource("4_ppgk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -84, 0)
+
+[node name="walls_only3" parent="." instance=ExtResource("4_ppgk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -88, 0)
+
+[node name="walls_only4" parent="." instance=ExtResource("4_ppgk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -92, 0)
+
+[node name="walls_only5" parent="." instance=ExtResource("4_ppgk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -96, 0)
+
+[node name="walls_only6" parent="." instance=ExtResource("4_ppgk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -100, 0)
+
+[node name="walls_only7" parent="." instance=ExtResource("4_ppgk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -104, 0)
+
+[node name="walls_only8" parent="." instance=ExtResource("4_ppgk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -108, 0)
+
+[node name="walls_only9" parent="." instance=ExtResource("4_ppgk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -112, 0)
+
+[node name="walls_only10" parent="." instance=ExtResource("4_ppgk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -116, 0)
+
+[node name="end" parent="." instance=ExtResource("5_2r41h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -120, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="end"]
+omni_range = 20.0
