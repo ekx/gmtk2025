@@ -193,7 +193,7 @@ func _physics_process(delta: float) -> void:
 	
 	time_since_last_footstep += delta;
 	
-	if velocity.length() > 0 && time_since_last_footstep > (footstep_frequency + rng.randf_range(-footstep_variance, footstep_variance)):
+	if velocity.length() > 0 && is_on_floor() && time_since_last_footstep > (footstep_frequency + rng.randf_range(-footstep_variance, footstep_variance)):
 		footstep_player.stream = footsteps.filter(func(footstep): return footstep != footstep_player.stream).pick_random()
 		footstep_player.playing = true
 		time_since_last_footstep = 0.0;
