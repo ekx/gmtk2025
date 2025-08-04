@@ -9,7 +9,7 @@ My submission for the GMTK Jam 2025 with the theme "Loop". I used this opportuni
 
 ## Instructions
 
-Play [here](https://ekx.itch.io/gmtk2025-descent)
+Download [here]([https://ekx.itch.io/gmtk2025-descent](https://github.com/ekx/gmtk2025/releases/))
 
 * Walk with WASD
 * Look around with the mouse.
