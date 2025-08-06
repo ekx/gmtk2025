@@ -1,6 +1,6 @@
 # GMTK Jam 2025 - Descent
 
-My submission for the GMTK 2025 Jam with the theme "Loop". I used this opportunity to learn Godot and Blender. So this is just a small atmospheric experience. The theme is represented through the looping stairwell. Headphones recommended. 
+My submission for the GMTK Jam 2025 with the theme "Loop". I used this opportunity to learn Godot and Blender, so this is just a small atmospheric experience. The theme is represented through the looping stairwell. Headphones recommended. 
 
 ## Screenshots
 
@@ -9,7 +9,7 @@ My submission for the GMTK 2025 Jam with the theme "Loop". I used this opportuni
 
 ## Instructions
 
-Play [here](https://ekx.itch.io/gmtk2025-descent)
+Download [here](https://github.com/ekx/gmtk2025/releases/)
 
 * Walk with WASD
 * Look around with the mouse.
